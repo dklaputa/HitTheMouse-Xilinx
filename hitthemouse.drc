@@ -1,0 +1,12 @@
+Release 14.4 Drc P.49d (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Wed Jul 03 14:37:46 2013
+
+drc -z HitTheMouse.ncd HitTheMouse.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net VGAshow/rgb_0_cmp_lt0000 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

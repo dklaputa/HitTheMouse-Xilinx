@@ -1,0 +1,8 @@
+verilog work "doRaMi.v"
+verilog work "sound.v"
+verilog work "bin2dec.v"
+verilog work "bgm.v"
+vhdl work "VGA_Display.vhd"
+vhdl work "Led_Out.vhd"
+verilog work "game.v"
+vhdl work "HitTheMouse.vhd"

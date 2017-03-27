@@ -1,0 +1,33 @@
+Release 14.4 Drc P.49d (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Fri Jun 28 23:47:54 2013
+
+drc -z game.ncd game.pcf
+
+ERROR:PhysDesignRules:368 - The signal <led_out<0>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:368 - The signal <led_out<1>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:368 - The signal <led_out<2>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:368 - The signal <led_out<3>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:368 - The signal <led_out<4>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:368 - The signal <led_out<5>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:368 - The signal <led_out<6>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:368 - The signal <led_out<7>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:10 - The network <led_out<0>_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <led_out<1>_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <led_out<2>_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <led_out<3>_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <led_out<4>_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <led_out<5>_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <led_out<6>_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <led_out<7>_OBUF> is completely unrouted.
+ERROR:Bitgen:25 - DRC detected 16 errors and 0 warnings.  Please see the
+   previously displayed individual error or warning messages for more details.

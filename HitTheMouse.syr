@@ -1,0 +1,2017 @@
+Release 14.4 - xst P.49d (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.89 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.93 secs
+ 
+--> Reading design: HitTheMouse.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "HitTheMouse.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "HitTheMouse"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : HitTheMouse
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "doRaMi.v" in library work
+Compiling verilog file "sound.v" in library work
+Module <doRaMi> compiled
+Compiling verilog file "bin2dec.v" in library work
+Module <sound> compiled
+Compiling verilog file "bgm.v" in library work
+Module <bin2dec> compiled
+Compiling verilog file "game.v" in library work
+Module <bgm> compiled
+Module <game> compiled
+No errors in compilation
+Analysis of file <"HitTheMouse.prj"> succeeded.
+ 
+Compiling vhdl file "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" in Library work.
+WARNING:HDLParsers:3310 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" Line 133. Function draw_mouse is not pure.  VHDL 87 allowed this; VHDL 93 requires the keyword IMPURE.
+Architecture behavioral of Entity vga_display is up to date.
+Compiling vhdl file "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/Led_Out.vhd" in Library work.
+Architecture behavioral of Entity led_out is up to date.
+Compiling vhdl file "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/HitTheMouse.vhd" in Library work.
+Entity <hitthemouse> compiled.
+Entity <hitthemouse> (Architecture <structural>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <HitTheMouse> in library <work> (architecture <structural>).
+
+Analyzing hierarchy for entity <VGA_Display> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Led_Out> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for module <game> in library <work> with parameters.
+	MAX_LIFE = "00000000000000000000000000000101"
+	MAX_TIME = "00000000000000000000000000101000"
+
+Analyzing hierarchy for module <bin2dec> in library <work>.
+
+Analyzing hierarchy for module <sound> in library <work>.
+
+Analyzing hierarchy for module <bgm> in library <work>.
+
+Analyzing hierarchy for module <doRaMi> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <HitTheMouse> in library <work> (Architecture <structural>).
+Entity <HitTheMouse> analyzed. Unit <HitTheMouse> generated.
+
+Analyzing Entity <VGA_Display> in library <work> (Architecture <behavioral>).
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1432 - Contents of array <pic_mouse0$mux0000> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <pic_mouse0$mux0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1432 - Contents of array <pic_mouse1$mux0000> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <pic_mouse1$mux0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1432 - Contents of array <pic_mouse0$mux0000> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <pic_mouse0$mux0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1432 - Contents of array <pic_mouse1$mux0000> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <pic_mouse1$mux0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1432 - Contents of array <pic_mouse0$mux0000> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <pic_mouse0$mux0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1432 - Contents of array <pic_mouse1$mux0000> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <pic_mouse1$mux0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1432 - Contents of array <pic_mouse0$mux0000> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <pic_mouse0$mux0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 125: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1432 - Contents of array <pic_mouse1$mux0000> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <pic_mouse1$mux0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 154: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 158: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 162: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 166: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 170: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 174: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 182: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 186: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 190: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 139: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 143: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:819 - "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd" line 363: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <countdown>, <pic_mouse>, <score2>, <pic_0>, <pic_1>, <pic_2>, <pic_3>, <pic_4>, <pic_5>, <pic_6>, <pic_7>, <pic_8>, <pic_9>, <score1>, <score0>, <score_max2>, <score_max1>, <score_max0>, <mission>, <pic_heart>, <pic_brokenheart>, <life>
+INFO:Xst:2679 - Register <y> in unit <VGA_Display> has a constant value of 10100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <x> in unit <VGA_Display> has a constant value of 111100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <temp_j> in unit <VGA_Display> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <temp_i> in unit <VGA_Display> has a constant value of 11 during circuit operation. The register is replaced by logic.
+Entity <VGA_Display> analyzed. Unit <VGA_Display> generated.
+
+Analyzing Entity <Led_Out> in library <work> (Architecture <behavioral>).
+Entity <Led_Out> analyzed. Unit <Led_Out> generated.
+
+Analyzing module <game> in library <work>.
+	MAX_LIFE = 32'sb00000000000000000000000000000101
+	MAX_TIME = 32'sb00000000000000000000000000101000
+Module <game> is correct for synthesis.
+ 
+Analyzing module <bin2dec> in library <work>.
+Module <bin2dec> is correct for synthesis.
+ 
+Analyzing module <sound> in library <work>.
+Module <sound> is correct for synthesis.
+ 
+Analyzing module <doRaMi> in library <work>.
+Module <doRaMi> is correct for synthesis.
+ 
+Analyzing module <bgm> in library <work>.
+	Calling function <getLength>.
+	Calling function <getNote>.
+Module <bgm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <VGA_Display>.
+    Related source file is "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/VGA_Display.vhd".
+WARNING:Xst:646 - Signal <y> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <x> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <temp_j<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <temp_i> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <Vcnt> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <Hcnt> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 1-bit latch for signal <rgb_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rgb_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rgb_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Using one-hot encoding for signal <j113$mux0016>.
+    Using one-hot encoding for signal <j25$mux0016>.
+    Using one-hot encoding for signal <j55$mux0016>.
+    Using one-hot encoding for signal <j85$mux0016>.
+    Using one-hot encoding for signal <j23$mux0016>.
+    Using one-hot encoding for signal <j2$mux0016>.
+    Using one-hot encoding for signal <j203$mux0016>.
+    Using one-hot encoding for signal <j205$mux0016>.
+    Using one-hot encoding for signal <j211$mux0016>.
+    Using one-hot encoding for signal <j217$mux0016>.
+    Using one-hot encoding for signal <j223$mux0016>.
+    Using one-hot encoding for signal <j229$mux0016>.
+    Using one-hot encoding for signal <j$mux0016>.
+    Found 1-bit register for signal <HS>.
+    Found 1-bit register for signal <VS>.
+    Found 9-bit adder for signal <$add0000> created at line 390.
+    Found 10-bit subtractor for signal <$sub0001> created at line 125.
+    Found 10-bit subtractor for signal <$sub0002> created at line 125.
+    Found 10-bit subtractor for signal <$sub0003> created at line 125.
+    Found 10-bit subtractor for signal <$sub0004> created at line 154.
+    Found 10-bit subtractor for signal <$sub0005> created at line 154.
+    Found 10-bit subtractor for signal <$sub0006> created at line 154.
+    Found 10-bit subtractor for signal <$sub0007> created at line 154.
+    Found 11-bit subtractor for signal <$sub0008> created at line 139.
+    Found 11-bit subtractor for signal <$sub0009> created at line 139.
+    Found 11-bit subtractor for signal <$sub0010> created at line 139.
+    Found 11-bit subtractor for signal <$sub0011> created at line 139.
+    Found 10-bit subtractor for signal <$sub0012> created at line 139.
+    Found 11-bit subtractor for signal <$sub0013> created at line 139.
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0000> created at line 125.
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0001> created at line 125.
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0002> created at line 125.
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0003> created at line 125.
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0004> created at line 125.
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0005> created at line 125.
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0006> created at line 125.
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0007> created at line 125.
+    Found 6x3-bit multiplier for signal <add0000$mult0000> created at line 390.
+    Found 1-bit register for signal <ck25MHz>.
+    Found 10-bit up counter for signal <intHcnt>.
+    Found 2-bit adder for signal <inttime$addsub0000> created at line 371.
+    Found 3-bit adder for signal <inttime$addsub0001> created at line 373.
+    Found 4-bit adder for signal <inttime$addsub0002> created at line 375.
+    Found 5-bit adder for signal <inttime$addsub0003> created at line 377.
+    Found 6-bit adder for signal <inttime$addsub0004> created at line 379.
+    Found 10-bit up counter for signal <intVcnt>.
+    Found 10-bit subtractor for signal <j$addsub0000> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0001> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0002> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0003> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0004> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0005> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0006> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0007> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0008> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0009> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0010> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0011> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0012> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0013> created at line 88.
+    Found 10-bit subtractor for signal <j$addsub0014> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0000> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0001> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0002> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0003> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0004> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0005> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0006> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0007> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0008> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0009> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0010> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0011> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0012> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0013> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0014> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0015> created at line 88.
+    Found 10-bit comparator greatequal for signal <j$cmp_ge0016> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0000> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0001> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0002> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0003> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0004> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0005> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0006> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0007> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0008> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0009> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0010> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0011> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0012> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0013> created at line 88.
+    Found 10-bit subtractor for signal <j1$addsub0014> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0000> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0001> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0002> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0003> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0004> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0005> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0006> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0007> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0008> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0009> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0010> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0011> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0012> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0013> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0014> created at line 88.
+    Found 10-bit comparator greatequal for signal <j1$cmp_ge0015> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0001> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0002> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0003> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0004> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0005> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0006> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0007> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0008> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0009> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0010> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0011> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0012> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0013> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0014> created at line 88.
+    Found 11-bit subtractor for signal <j113$addsub0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j113$cmp_ge0015> created at line 88.
+    Found 10-bit comparator greatequal for signal <j113$cmp_ge0016> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0001> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0002> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0003> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0004> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0005> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0006> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0007> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0008> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0009> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0010> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0011> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0012> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0013> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0014> created at line 88.
+    Found 11-bit subtractor for signal <j13$addsub0015> created at line 88.
+    Found 32-bit subtractor for signal <j13$addsub0016> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j13$cmp_ge0015> created at line 88.
+    Found 32-bit comparator greatequal for signal <j13$cmp_ge0016> created at line 88.
+    Found 32-bit subtractor for signal <j19$addsub0000> created at line 88.
+    Found 32-bit comparator greatequal for signal <j19$cmp_ge0000> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0001> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0002> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0003> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0004> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0005> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0006> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0007> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0008> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0009> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0010> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0011> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0012> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0013> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0014> created at line 88.
+    Found 11-bit subtractor for signal <j2$addsub0015> created at line 88.
+    Found 32-bit subtractor for signal <j2$addsub0016> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j2$cmp_ge0015> created at line 88.
+    Found 32-bit comparator greatequal for signal <j2$cmp_ge0016> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0001> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0002> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0003> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0004> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0005> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0006> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0007> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0008> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0009> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0010> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0011> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0012> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0013> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0014> created at line 88.
+    Found 11-bit subtractor for signal <j203$addsub0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j203$cmp_ge0015> created at line 88.
+    Found 10-bit comparator greatequal for signal <j203$cmp_ge0016> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0000> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0001> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0002> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0003> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0004> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0005> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0006> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0007> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0008> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0009> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0010> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0011> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0012> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0013> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0014> created at line 88.
+    Found 12-bit subtractor for signal <j205$addsub0015> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0000> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0001> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0002> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0003> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0004> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0005> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0006> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0007> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0008> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0009> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0010> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0011> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0012> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0013> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0014> created at line 88.
+    Found 12-bit comparator greatequal for signal <j205$cmp_ge0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j205$cmp_ge0016> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0000> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0001> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0002> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0003> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0004> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0005> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0006> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0007> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0008> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0009> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0010> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0011> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0012> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0013> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0014> created at line 88.
+    Found 12-bit subtractor for signal <j211$addsub0015> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0000> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0001> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0002> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0003> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0004> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0005> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0006> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0007> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0008> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0009> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0010> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0011> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0012> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0013> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0014> created at line 88.
+    Found 12-bit comparator greatequal for signal <j211$cmp_ge0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j211$cmp_ge0016> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0000> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0001> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0002> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0003> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0004> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0005> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0006> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0007> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0008> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0009> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0010> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0011> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0012> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0013> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0014> created at line 88.
+    Found 12-bit subtractor for signal <j217$addsub0015> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0000> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0001> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0002> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0003> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0004> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0005> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0006> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0007> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0008> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0009> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0010> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0011> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0012> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0013> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0014> created at line 88.
+    Found 12-bit comparator greatequal for signal <j217$cmp_ge0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j217$cmp_ge0016> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0000> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0001> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0002> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0003> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0004> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0005> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0006> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0007> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0008> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0009> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0010> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0011> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0012> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0013> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0014> created at line 88.
+    Found 12-bit subtractor for signal <j223$addsub0015> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0000> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0001> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0002> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0003> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0004> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0005> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0006> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0007> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0008> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0009> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0010> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0011> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0012> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0013> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0014> created at line 88.
+    Found 12-bit comparator greatequal for signal <j223$cmp_ge0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j223$cmp_ge0016> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0000> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0001> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0002> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0003> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0004> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0005> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0006> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0007> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0008> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0009> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0010> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0011> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0012> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0013> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0014> created at line 88.
+    Found 12-bit subtractor for signal <j229$addsub0015> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0000> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0001> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0002> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0003> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0004> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0005> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0006> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0007> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0008> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0009> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0010> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0011> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0012> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0013> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0014> created at line 88.
+    Found 12-bit comparator greatequal for signal <j229$cmp_ge0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j229$cmp_ge0016> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0001> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0002> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0003> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0004> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0005> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0006> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0007> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0008> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0009> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0010> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0011> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0012> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0013> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0014> created at line 88.
+    Found 11-bit subtractor for signal <j23$addsub0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j23$cmp_ge0015> created at line 88.
+    Found 10-bit comparator greatequal for signal <j23$cmp_ge0016> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0001> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0002> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0003> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0004> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0005> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0006> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0007> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0008> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0009> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0010> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0011> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0012> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0013> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0014> created at line 88.
+    Found 11-bit subtractor for signal <j25$addsub0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j25$cmp_ge0015> created at line 88.
+    Found 10-bit comparator greatequal for signal <j25$cmp_ge0016> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0001> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0002> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0003> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0004> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0005> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0006> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0007> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0008> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0009> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0010> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0011> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0012> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0013> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0014> created at line 88.
+    Found 11-bit subtractor for signal <j55$addsub0015> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j55$cmp_ge0015> created at line 88.
+    Found 10-bit comparator greatequal for signal <j55$cmp_ge0016> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0001> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0002> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0003> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0004> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0005> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0006> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0007> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0008> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0009> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0010> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0011> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0012> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0013> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0014> created at line 88.
+    Found 11-bit subtractor for signal <j7$addsub0015> created at line 88.
+    Found 32-bit subtractor for signal <j7$addsub0016> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j7$cmp_ge0015> created at line 88.
+    Found 32-bit comparator greatequal for signal <j7$cmp_ge0016> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0000> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0001> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0002> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0003> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0004> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0005> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0006> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0007> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0008> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0009> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0010> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0011> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0012> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0013> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0014> created at line 88.
+    Found 11-bit comparator greatequal for signal <j85$cmp_ge0015> created at line 88.
+    Found 10-bit comparator greatequal for signal <j85$cmp_ge0016> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0000> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0001> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0002> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0003> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0004> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0005> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0006> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0007> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0008> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0009> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0010> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0011> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0012> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0013> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0014> created at line 88.
+    Found 11-bit subtractor for signal <j85$sub0015> created at line 88.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0000> created at line 389.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0002> created at line 113.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0003> created at line 113.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0004> created at line 120.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0005> created at line 120.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0006> created at line 122.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0007> created at line 389.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0008> created at line 389.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0009> created at line 113.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0010> created at line 113.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0011> created at line 120.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0012> created at line 120.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0013> created at line 122.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0014> created at line 389.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0015> created at line 113.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0016> created at line 120.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0018> created at line 113.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0019> created at line 120.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0020> created at line 417.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0021> created at line 421.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0022> created at line 430.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0023> created at line 430.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0024> created at line 431.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0025> created at line 433.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0026> created at line 435.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0027> created at line 437.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0000> created at line 417.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0001> created at line 421.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0002> created at line 430.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0003> created at line 430.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0004> created at line 431.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0005> created at line 433.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0006> created at line 435.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0007> created at line 437.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0000> created at line 389.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0001> created at line 113.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0002> created at line 113.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0003> created at line 120.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0004> created at line 120.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0005> created at line 122.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0006> created at line 389.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0007> created at line 113.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0008> created at line 113.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0009> created at line 120.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0010> created at line 120.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0011> created at line 122.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0012> created at line 389.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0013> created at line 113.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0014> created at line 120.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0015> created at line 389.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0016> created at line 113.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0017> created at line 120.
+    Found 10-bit comparator greatequal for signal <rgb_0$cmp_ge0000> created at line 390.
+    Found 10-bit comparator greatequal for signal <rgb_0$cmp_ge0001> created at line 397.
+    Found 10-bit comparator greatequal for signal <rgb_0$cmp_ge0002> created at line 397.
+    Found 10-bit comparator greatequal for signal <rgb_0$cmp_ge0003> created at line 400.
+    Found 10-bit comparator greatequal for signal <rgb_0$cmp_ge0004> created at line 404.
+    Found 10-bit comparator greatequal for signal <rgb_0$cmp_ge0005> created at line 414.
+    Found 10-bit comparator greatequal for signal <rgb_0$cmp_ge0006> created at line 414.
+    Found 10-bit comparator lessequal for signal <rgb_0$cmp_le0000> created at line 390.
+    Found 10-bit comparator lessequal for signal <rgb_0$cmp_le0001> created at line 390.
+    Found 10-bit comparator lessequal for signal <rgb_0$cmp_le0002> created at line 397.
+    Found 10-bit comparator lessequal for signal <rgb_0$cmp_le0003> created at line 397.
+    Found 10-bit comparator lessequal for signal <rgb_0$cmp_le0004> created at line 400.
+    Found 10-bit comparator lessequal for signal <rgb_0$cmp_le0005> created at line 402.
+    Found 10-bit comparator lessequal for signal <rgb_0$cmp_le0006> created at line 404.
+    Found 10-bit comparator lessequal for signal <rgb_0$cmp_le0007> created at line 414.
+    Found 10-bit comparator less for signal <rgb_0$cmp_lt0000> created at line 381.
+    Found 10-bit comparator less for signal <rgb_0$cmp_lt0001> created at line 381.
+    Found 10-bit comparator less for signal <rgb_0$cmp_lt0002> created at line 383.
+    Found 10-bit subtractor for signal <sub0000$sub0000> created at line 125.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   3 D-type flip-flop(s).
+	inferred 278 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred 342 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <VGA_Display> synthesized.
+
+
+Synthesizing Unit <Led_Out>.
+    Related source file is "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/Led_Out.vhd".
+WARNING:Xst:647 - Input <ck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <Led_Out> synthesized.
+
+
+Synthesizing Unit <bin2dec>.
+    Related source file is "bin2dec.v".
+    Found 4-bit register for signal <dec0>.
+    Found 4-bit register for signal <dec1>.
+    Found 4-bit register for signal <dec2>.
+    Found 4x7-bit multiplier for signal <$mult0000> created at line 36.
+    Found 13-bit subtractor for signal <$sub0000> created at line 36.
+    Found 4-bit subtractor for signal <dec0$addsub0000> created at line 38.
+    Found 4x4-bit multiplier for signal <dec0$mult0000> created at line 38.
+    Found 4-bit subtractor for signal <dec0$sub0000> created at line 38.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0000> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0001> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0002> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0003> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0004> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0005> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0006> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0007> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0008> created at line 36.
+    Found 13-bit comparator greatequal for signal <old_dec1_260$cmp_le0009> created at line 36.
+    Found 8-bit comparator greatequal for signal <old_dec2_259$cmp_le0000> created at line 32.
+    Found 8-bit comparator greatequal for signal <old_dec2_259$cmp_le0001> created at line 32.
+    Summary:
+	inferred  12 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred  12 Comparator(s).
+Unit <bin2dec> synthesized.
+
+
+Synthesizing Unit <doRaMi>.
+    Related source file is "doRaMi.v".
+    Found 1-bit register for signal <wave>.
+    Found 16-bit register for signal <count>.
+    Found 16-bit adder for signal <count$share0000> created at line 28.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0000> created at line 32.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0001> created at line 41.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0002> created at line 50.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0003> created at line 59.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0004> created at line 68.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0005> created at line 77.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0006> created at line 86.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0007> created at line 95.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0008> created at line 104.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0009> created at line 113.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0010> created at line 122.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0011> created at line 131.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0012> created at line 140.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0013> created at line 149.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0014> created at line 158.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0015> created at line 167.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0016> created at line 176.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0017> created at line 185.
+    Found 16-bit comparator greatequal for signal <wave$cmp_ge0018> created at line 194.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  19 Comparator(s).
+Unit <doRaMi> synthesized.
+
+
+Synthesizing Unit <sound>.
+    Related source file is "sound.v".
+    Found finite state machine <FSM_0> for signal <play>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 69                                             |
+    | Inputs             | 19                                             |
+    | Outputs            | 3                                              |
+    | Clock              | clk100                    (rising_edge)        |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 5-bit register for signal <note>.
+    Found 7-bit register for signal <notelength>.
+    Found 7-bit adder for signal <notelength$addsub0000>.
+    Found 7-bit comparator less for signal <play$cmp_lt0000> created at line 76.
+    Found 7-bit comparator less for signal <play$cmp_lt0001> created at line 78.
+    Found 7-bit comparator less for signal <play$cmp_lt0002> created at line 79.
+    Found 7-bit comparator less for signal <play$cmp_lt0003> created at line 80.
+    Found 7-bit comparator less for signal <play$cmp_lt0004> created at line 82.
+    Found 7-bit comparator less for signal <play$cmp_lt0005> created at line 84.
+    Found 7-bit comparator less for signal <play$cmp_lt0006> created at line 86.
+    Found 7-bit comparator less for signal <play$cmp_lt0007> created at line 88.
+    Found 7-bit comparator less for signal <play$cmp_lt0008> created at line 66.
+    Found 7-bit comparator less for signal <play$cmp_lt0009> created at line 54.
+    Found 7-bit comparator less for signal <play$cmp_lt0010> created at line 56.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  11 Comparator(s).
+Unit <sound> synthesized.
+
+
+Synthesizing Unit <bgm>.
+    Related source file is "bgm.v".
+    Found 128x8-bit ROM for signal <i$rom0000>.
+    Found 3-bit up counter for signal <count>.
+    Found 7-bit register for signal <i>.
+    Found 7-bit adder for signal <i$addsub0000> created at line 56.
+    Found 7-bit 4-to-1 multiplexer for signal <i$mux0000>.
+    Found 4-bit register for signal <j>.
+    Found 3-bit comparator greatequal for signal <j$cmp_ge0000> created at line 44.
+    Found 3-bit comparator greatequal for signal <j$cmp_ge0001> created at line 44.
+    Found 3-bit comparator greatequal for signal <j$cmp_ge0002> created at line 44.
+    Found 4-bit comparator greater for signal <j$cmp_gt0000> created at line 53.
+    Found 7-bit comparator less for signal <j$cmp_lt0000> created at line 50.
+    Found 4-bit 4-to-1 multiplexer for signal <j$mux0000>.
+    Found 4-bit register for signal <note>.
+    Found 7-bit comparator greatequal for signal <note$cmp_ge0000> created at line 50.
+    Found 4-bit comparator greater for signal <note$cmp_gt0000> created at line 53.
+    Found 3-bit comparator less for signal <note$cmp_lt0000> created at line 44.
+    Found 3-bit comparator less for signal <note$cmp_lt0001> created at line 44.
+    Found 3-bit comparator less for signal <note$cmp_lt0002> created at line 44.
+    Found 4-bit adder for signal <old_j_261$add0000> created at line 52.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred  15 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  10 Comparator(s).
+	inferred  11 Multiplexer(s).
+Unit <bgm> synthesized.
+
+
+Synthesizing Unit <game>.
+    Related source file is "game.v".
+WARNING:Xst:1305 - Output <seg_out> is never assigned. Tied to value 00000000.
+WARNING:Xst:1305 - Output <seg1> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <seg2> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <seg3> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <seg4> is never assigned. Tied to value 0.
+    Found finite state machine <FSM_1> for signal <situation>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 22                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk100                    (rising_edge)        |
+    | Power Up State     | 10                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 203: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "game.v" line 108: The result of a 31x17-bit multiplication is partially used. Only the 31 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 2-bit up counter for signal <mission>.
+    Found 9-bit register for signal <appearCount>.
+    Found 9-bit comparator greatequal for signal <appearCount$cmp_ge0000> created at line 102.
+    Found 9-bit comparator greatequal for signal <appearCount$cmp_ge0001> created at line 102.
+    Found 9-bit comparator greatequal for signal <appearCount$cmp_ge0002> created at line 102.
+    Found 9-bit adder for signal <appearCount$mux0000>.
+    Found 1-bit register for signal <clk100>.
+    Found 18-bit up counter for signal <clk100_count>.
+    Found 6-bit register for signal <countdown>.
+    Found 6-bit subtractor for signal <countdown$addsub0000> created at line 131.
+    Found 8-bit comparator greatequal for signal <countdown$cmp_ge0000> created at line 162.
+    Found 8-bit comparator greatequal for signal <countdown$cmp_ge0001> created at line 162.
+    Found 6-bit comparator lessequal for signal <countdown$cmp_le0000> created at line 131.
+    Found 8-bit comparator less for signal <countdown$cmp_lt0000> created at line 162.
+    Found 8-bit comparator less for signal <countdown$cmp_lt0001> created at line 162.
+    Found 6-bit register for signal <disappearCount>.
+    Found 6-bit adder for signal <disappearCount$mux0000>.
+    Found 1-bit register for signal <faultSound>.
+    Found 1-bit register for signal <hit>.
+    Found 1-bit register for signal <hitSound>.
+    Found 3-bit register for signal <life>.
+    Found 3-bit addsub for signal <life$addsub0000>.
+    Found 4-bit comparator greatequal for signal <life$cmp_ge0000> created at line 157.
+    Found 5-bit register for signal <lifebuff>.
+    Found 4-bit comparator less for signal <lifebuff$cmp_lt0000> created at line 157.
+    Found 5-bit adder for signal <lifebuff$mux0000>.
+    Found 1-bit register for signal <loseSound>.
+    Found 24-bit register for signal <mouse>.
+    Found 3-bit subtractor for signal <mouse_0$addsub0000> created at line 124.
+    Found 6-bit comparator greatequal for signal <mouse_0$cmp_ge0000> created at line 119.
+    Found 3-bit comparator greater for signal <mouse_0$cmp_gt0000> created at line 124.
+    Found 3-bit comparator lessequal for signal <mouse_0$cmp_le0000> created at line 124.
+    Found 6-bit comparator less for signal <mouse_0$cmp_lt0000> created at line 119.
+    Found 3-bit subtractor for signal <mouse_1$addsub0000> created at line 124.
+    Found 3-bit comparator greater for signal <mouse_1$cmp_gt0000> created at line 124.
+    Found 3-bit comparator lessequal for signal <mouse_1$cmp_le0000> created at line 124.
+    Found 3-bit subtractor for signal <mouse_2$addsub0000> created at line 124.
+    Found 3-bit comparator greater for signal <mouse_2$cmp_gt0000> created at line 124.
+    Found 3-bit comparator lessequal for signal <mouse_2$cmp_le0000> created at line 124.
+    Found 3-bit subtractor for signal <mouse_3$addsub0000> created at line 124.
+    Found 3-bit comparator greater for signal <mouse_3$cmp_gt0000> created at line 124.
+    Found 3-bit comparator lessequal for signal <mouse_3$cmp_le0000> created at line 124.
+    Found 3-bit subtractor for signal <mouse_4$addsub0000> created at line 124.
+    Found 3-bit comparator greater for signal <mouse_4$cmp_gt0000> created at line 124.
+    Found 3-bit comparator lessequal for signal <mouse_4$cmp_le0000> created at line 124.
+    Found 3-bit subtractor for signal <mouse_5$addsub0000> created at line 124.
+    Found 3-bit comparator greater for signal <mouse_5$cmp_gt0000> created at line 124.
+    Found 3-bit comparator lessequal for signal <mouse_5$cmp_le0000> created at line 124.
+    Found 3-bit subtractor for signal <mouse_6$addsub0000> created at line 124.
+    Found 3-bit comparator greater for signal <mouse_6$cmp_gt0000> created at line 124.
+    Found 3-bit comparator lessequal for signal <mouse_6$cmp_le0000> created at line 124.
+    Found 3-bit subtractor for signal <mouse_7$addsub0000> created at line 124.
+    Found 3-bit comparator greater for signal <mouse_7$cmp_gt0000> created at line 124.
+    Found 3-bit comparator lessequal for signal <mouse_7$cmp_le0000> created at line 124.
+    Found 8-bit register for signal <old_btn>.
+    Found 1-bit register for signal <old_pause>.
+    Found 5-bit register for signal <onebitlife>.
+    Found 8-bit register for signal <onebitmouse>.
+    Found 31-bit register for signal <randNum>.
+    Found 9-bit comparator less for signal <randNum$cmp_lt0000> created at line 102.
+    Found 9-bit comparator less for signal <randNum$cmp_lt0001> created at line 102.
+    Found 9-bit comparator less for signal <randNum$cmp_lt0002> created at line 102.
+    Found 5x17-bit multiplier for signal <randNum$mult0001> created at line 202.
+    Found 31x17-bit multiplier for signal <randNum$mult0022> created at line 108.
+    Found 31x17-bit multiplier for signal <randNum$mult0023> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0024> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0025> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0026> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0027> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0028> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0029> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0030> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0031> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0032> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0033> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0034> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0035> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0036> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0037> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0038> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0039> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0040> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0041> created at line 203.
+    Found 31x17-bit multiplier for signal <randNum$mult0042> created at line 203.
+    Found 8-bit register for signal <score>.
+    Found 8-bit adder for signal <score$mux0000>.
+    Found 8-bit register for signal <score_max>.
+    Found 8-bit comparator greater for signal <score_max$cmp_gt0000> created at line 96.
+    Found 5-bit up counter for signal <seed>.
+    Found 5-bit comparator greatequal for signal <seed$cmp_ge0000> created at line 83.
+    Found 6-bit comparator greater for signal <situation$cmp_gt0000> created at line 131.
+    Found 7-bit up counter for signal <TimeCount>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   4 Counter(s).
+	inferred 127 D-type flip-flop(s).
+	inferred  14 Adder/Subtractor(s).
+	inferred  22 Multiplier(s).
+	inferred  34 Comparator(s).
+Unit <game> synthesized.
+
+
+Synthesizing Unit <HitTheMouse>.
+    Related source file is "C:/Users/Administrator/Desktop/HitTheMouse_final/HitTheMouse/HitTheMouse.vhd".
+WARNING:Xst:647 - Input <fpgabtn<3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <HitTheMouse> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 128x8-bit ROM                                         : 1
+# Multipliers                                          : 27
+ 31x17-bit multiplier                                  : 21
+ 4x4-bit multiplier                                    : 2
+ 4x7-bit multiplier                                    : 2
+ 5x17-bit multiplier                                   : 1
+ 6x3-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 303
+ 10-bit subtractor                                     : 39
+ 11-bit subtractor                                     : 149
+ 12-bit subtractor                                     : 80
+ 13-bit subtractor                                     : 2
+ 16-bit adder                                          : 2
+ 2-bit adder                                           : 1
+ 3-bit adder                                           : 1
+ 3-bit addsub                                          : 1
+ 3-bit subtractor                                      : 8
+ 32-bit subtractor                                     : 4
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 4
+ 5-bit adder                                           : 2
+ 6-bit adder                                           : 2
+ 6-bit subtractor                                      : 1
+ 7-bit adder                                           : 2
+ 8-bit adder                                           : 1
+ 9-bit adder                                           : 2
+# Counters                                             : 7
+ 10-bit up counter                                     : 2
+ 18-bit up counter                                     : 1
+ 2-bit up counter                                      : 1
+ 3-bit up counter                                      : 1
+ 5-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+# Registers                                            : 50
+ 1-bit register                                        : 19
+ 16-bit register                                       : 2
+ 3-bit register                                        : 9
+ 31-bit register                                       : 1
+ 4-bit register                                        : 8
+ 5-bit register                                        : 3
+ 6-bit register                                        : 2
+ 7-bit register                                        : 2
+ 8-bit register                                        : 3
+ 9-bit register                                        : 1
+# Latches                                              : 3
+ 1-bit latch                                           : 3
+# Comparators                                          : 459
+ 10-bit comparator greatequal                          : 72
+ 10-bit comparator less                                : 21
+ 10-bit comparator lessequal                           : 16
+ 11-bit comparator greatequal                          : 149
+ 12-bit comparator greatequal                          : 80
+ 13-bit comparator greatequal                          : 20
+ 16-bit comparator greatequal                          : 38
+ 3-bit comparator greatequal                           : 3
+ 3-bit comparator greater                              : 8
+ 3-bit comparator less                                 : 3
+ 3-bit comparator lessequal                            : 8
+ 32-bit comparator greatequal                          : 4
+ 4-bit comparator greatequal                           : 1
+ 4-bit comparator greater                              : 2
+ 4-bit comparator less                                 : 1
+ 5-bit comparator greatequal                           : 1
+ 6-bit comparator greatequal                           : 1
+ 6-bit comparator greater                              : 1
+ 6-bit comparator less                                 : 1
+ 6-bit comparator lessequal                            : 1
+ 7-bit comparator greatequal                           : 1
+ 7-bit comparator less                                 : 12
+ 8-bit comparator greatequal                           : 6
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 2
+ 9-bit comparator greatequal                           : 3
+ 9-bit comparator less                                 : 3
+# Multiplexers                                         : 10
+ 1-bit 16-to-1 multiplexer                             : 8
+ 4-bit 4-to-1 multiplexer                              : 1
+ 7-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <vgame/situation/FSM> on signal <situation[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 10    | 00
+ 00    | 01
+ 11    | 10
+ 01    | 11
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <vgame/U4/play/FSM> on signal <play[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+INFO:Xst:2261 - The FF/Latch <dec2_2> in Unit <U3> is equivalent to the following FF/Latch, which will be removed : <dec2_3> 
+INFO:Xst:2261 - The FF/Latch <dec2_2> in Unit <U6> is equivalent to the following FF/Latch, which will be removed : <dec2_3> 
+WARNING:Xst:1710 - FF/Latch <dec2_2> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dec2_2> (without init value) has a constant value of 0 in block <U6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <dec2<3:2>> (without init value) have a constant value of 0 in block <bin2dec>.
+
+Synthesizing (advanced) Unit <bgm>.
+INFO:Xst:3044 - The ROM <Mrom_i_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <i>.
+INFO:Xst:3225 - The RAM <Mrom_i_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk100>        | rise     |
+    |     enA            | connected to signal <j_or0001>      | high     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <getNote_1_getNote> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <bgm> synthesized (advanced).
+
+Synthesizing (advanced) Unit <game>.
+	Found pipelined multiplier on signal <randNum_mult0022>:
+		- 1 pipeline level(s) found in a register on signal <randNum>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_randNum_mult0022 by adding 2 register level(s).
+Unit <game> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# RAMs                                                 : 1
+ 128x8-bit single-port block RAM                       : 1
+# Multipliers                                          : 27
+ 31x17-bit multiplier                                  : 20
+ 31x17-bit registered multiplier                       : 1
+ 4x4-bit multiplier                                    : 2
+ 4x7-bit multiplier                                    : 2
+ 5x17-bit multiplier                                   : 1
+ 6x3-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 303
+ 10-bit subtractor                                     : 39
+ 11-bit subtractor                                     : 149
+ 12-bit subtractor                                     : 80
+ 13-bit subtractor                                     : 2
+ 16-bit adder                                          : 2
+ 2-bit adder                                           : 1
+ 3-bit adder                                           : 1
+ 3-bit addsub                                          : 1
+ 3-bit subtractor                                      : 8
+ 32-bit subtractor                                     : 4
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 4
+ 5-bit adder                                           : 2
+ 6-bit adder                                           : 2
+ 6-bit subtractor                                      : 1
+ 7-bit adder                                           : 2
+ 8-bit adder                                           : 1
+ 9-bit adder                                           : 2
+# Counters                                             : 7
+ 10-bit up counter                                     : 2
+ 18-bit up counter                                     : 1
+ 2-bit up counter                                      : 1
+ 3-bit up counter                                      : 1
+ 5-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+# Registers                                            : 180
+ Flip-Flops                                            : 180
+# Latches                                              : 3
+ 1-bit latch                                           : 3
+# Comparators                                          : 459
+ 10-bit comparator greatequal                          : 72
+ 10-bit comparator less                                : 21
+ 10-bit comparator lessequal                           : 16
+ 11-bit comparator greatequal                          : 149
+ 12-bit comparator greatequal                          : 80
+ 13-bit comparator greatequal                          : 20
+ 16-bit comparator greatequal                          : 38
+ 3-bit comparator greatequal                           : 3
+ 3-bit comparator greater                              : 8
+ 3-bit comparator less                                 : 3
+ 3-bit comparator lessequal                            : 8
+ 32-bit comparator greatequal                          : 4
+ 4-bit comparator greatequal                           : 1
+ 4-bit comparator greater                              : 2
+ 4-bit comparator less                                 : 1
+ 5-bit comparator greatequal                           : 1
+ 6-bit comparator greatequal                           : 1
+ 6-bit comparator greater                              : 1
+ 6-bit comparator less                                 : 1
+ 6-bit comparator lessequal                            : 1
+ 7-bit comparator greatequal                           : 1
+ 7-bit comparator less                                 : 12
+ 8-bit comparator greatequal                           : 6
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 2
+ 9-bit comparator greatequal                           : 3
+ 9-bit comparator less                                 : 3
+# Multiplexers                                         : 10
+ 1-bit 16-to-1 multiplexer                             : 8
+ 4-bit 4-to-1 multiplexer                              : 1
+ 7-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <HitTheMouse> ...
+
+Optimizing unit <VGA_Display> ...
+
+Optimizing unit <bin2dec> ...
+
+Optimizing unit <doRaMi> ...
+
+Optimizing unit <sound> ...
+
+Optimizing unit <bgm> ...
+
+Optimizing unit <game> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <vgame/U4/note_2> in Unit <HitTheMouse> is equivalent to the following FF/Latch, which will be removed : <vgame/U4/note_3> 
+Found area constraint ratio of 100 (+ 5) on block HitTheMouse, actual ratio is 56.
+FlipFlop vgame/onebitmouse_7 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop vgame/onebitmouse_6 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop vgame/onebitmouse_5 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop vgame/onebitmouse_4 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop vgame/onebitmouse_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop vgame/onebitmouse_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop vgame/onebitmouse_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop vgame/onebitmouse_0 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 277
+ Flip-Flops                                            : 277
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : HitTheMouse.ngr
+Top Level Output File Name         : HitTheMouse
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 40
+
+Cell Usage :
+# BELS                             : 8617
+#      GND                         : 1
+#      INV                         : 745
+#      LUT1                        : 537
+#      LUT2                        : 798
+#      LUT2_D                      : 10
+#      LUT2_L                      : 3
+#      LUT3                        : 538
+#      LUT3_D                      : 10
+#      LUT3_L                      : 3
+#      LUT4                        : 1652
+#      LUT4_D                      : 8
+#      LUT4_L                      : 54
+#      MULT_AND                    : 1
+#      MUXCY                       : 2075
+#      MUXF5                       : 218
+#      VCC                         : 1
+#      XORCY                       : 1963
+# FlipFlops/Latches                : 280
+#      FD                          : 71
+#      FDE                         : 89
+#      FDR                         : 59
+#      FDRE                        : 47
+#      FDRS                        : 1
+#      FDS                         : 9
+#      FDSE                        : 1
+#      LDE                         : 3
+# RAMS                             : 1
+#      RAMB16_S9                   : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 38
+#      IBUF                        : 11
+#      OBUF                        : 27
+# MULTs                            : 20
+#      MULT18X18SIO                : 20
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     2375  out of   4656    51%  
+ Number of Slice Flip Flops:            272  out of   9312     2%  
+ Number of 4 input LUTs:               4358  out of   9312    46%  
+ Number of IOs:                          40
+ Number of bonded IOBs:                  39  out of    232    16%  
+    IOB Flip Flops:                       8
+ Number of BRAMs:                         1  out of     20     5%  
+ Number of MULT18X18SIOs:                20  out of     20   100%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+------------------------------------------------------+------------------------+-------+
+Clock Signal                                          | Clock buffer(FF name)  | Load  |
+------------------------------------------------------+------------------------+-------+
+VGAshow/ck25MHz1                                      | BUFG                   | 22    |
+VGAshow/rgb_0_cmp_lt0000(VGAshow/rgb_0_cmp_lt000011:O)| NONE(*)(VGAshow/rgb_0) | 3     |
+mclk                                                  | BUFGP                  | 100   |
+vgame/clk1001                                         | BUFG                   | 156   |
+------------------------------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.699ns (Maximum Frequency: 103.103MHz)
+   Minimum input arrival time before clock: 10.063ns
+   Maximum output required time after clock: 38.190ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'VGAshow/ck25MHz1'
+  Clock period: 7.967ns (frequency: 125.517MHz)
+  Total number of paths / destination ports: 551 / 54
+-------------------------------------------------------------------------
+Delay:               7.967ns (Levels of Logic = 3)
+  Source:            VGAshow/intHcnt_4 (FF)
+  Destination:       VGAshow/intVcnt_9 (FF)
+  Source Clock:      VGAshow/ck25MHz1 rising
+  Destination Clock: VGAshow/ck25MHz1 rising
+
+  Data Path: VGAshow/intHcnt_4 to VGAshow/intVcnt_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q            117   0.591   1.464  VGAshow/intHcnt_4 (VGAshow/intHcnt_4)
+     LUT4:I0->O            6   0.704   0.704  VGAshow/rgb_and0034331 (VGAshow/N595)
+     LUT4:I2->O           21   0.704   1.303  VGAshow/intVcnt_and00004 (VGAshow/intVcnt_cmp_eq0000)
+     LUT4:I0->O           10   0.704   0.882  VGAshow/intVcnt_and000038 (VGAshow/intVcnt_and0000)
+     FDRE:R                    0.911          VGAshow/intVcnt_0
+    ----------------------------------------
+    Total                      7.967ns (3.614ns logic, 4.353ns route)
+                                       (45.4% logic, 54.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'VGAshow/rgb_0_cmp_lt0000'
+  Clock period: 7.764ns (frequency: 128.800MHz)
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Delay:               7.764ns (Levels of Logic = 7)
+  Source:            VGAshow/rgb_1 (LATCH)
+  Destination:       VGAshow/rgb_1 (LATCH)
+  Source Clock:      VGAshow/rgb_0_cmp_lt0000 falling
+  Destination Clock: VGAshow/rgb_0_cmp_lt0000 falling
+
+  Data Path: VGAshow/rgb_1 to VGAshow/rgb_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.676   0.499  VGAshow/rgb_1 (VGAshow/rgb_1)
+     LUT4:I1->O            1   0.704   0.455  VGAshow/rgb_1_mux0009299 (VGAshow/rgb_1_mux0009299)
+     LUT4:I2->O            1   0.704   0.000  VGAshow/rgb_1_mux0009343_F (N1015)
+     MUXF5:I0->O           1   0.321   0.499  VGAshow/rgb_1_mux0009343 (VGAshow/rgb_1_mux0009343)
+     LUT4_L:I1->LO         1   0.704   0.179  VGAshow/rgb_1_mux0009387 (VGAshow/rgb_1_mux0009387)
+     LUT4:I1->O            1   0.704   0.499  VGAshow/rgb_1_mux0009433 (VGAshow/rgb_1_mux0009433)
+     LUT4_L:I1->LO         1   0.704   0.104  VGAshow/rgb_1_mux0009483 (VGAshow/rgb_1_mux0009483)
+     LUT4:I3->O            2   0.704   0.000  VGAshow/rgb_1_mux0009663 (VGAshow/rgb_1_mux0009)
+     LDE:D                     0.308          VGAshow/rgb_1
+    ----------------------------------------
+    Total                      7.764ns (5.529ns logic, 2.235ns route)
+                                       (71.2% logic, 28.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mclk'
+  Clock period: 9.649ns (frequency: 103.638MHz)
+  Total number of paths / destination ports: 7728 / 88
+-------------------------------------------------------------------------
+Delay:               9.649ns (Levels of Logic = 16)
+  Source:            vgame/U4/U/count_3 (FF)
+  Destination:       vgame/U4/U/count_15 (FF)
+  Source Clock:      mclk rising
+  Destination Clock: mclk rising
+
+  Data Path: vgame/U4/U/count_3 to vgame/U4/U/count_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              12   0.591   1.136  vgame/U4/U/count_3 (vgame/U4/U/count_3)
+     LUT2:I0->O            1   0.704   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_lut<2>4 (vgame/U4/U/Mcompar_wave_cmp_ge0001_lut<2>4)
+     MUXCY:S->O            1   0.464   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<2>_11 (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<2>12)
+     MUXCY:CI->O           1   0.059   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<3>_11 (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<3>12)
+     MUXCY:CI->O           1   0.059   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<4>_11 (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<4>12)
+     MUXCY:CI->O           1   0.059   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<5>_11 (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<5>10)
+     MUXCY:CI->O           1   0.059   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<6>_9 (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<6>7)
+     MUXCY:CI->O           1   0.059   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<7>_6 (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<7>5)
+     MUXCY:CI->O           1   0.059   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<8>_4 (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<8>2)
+     MUXCY:CI->O           1   0.059   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<9>_1 (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<10> (vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<10>)
+     MUXCY:CI->O           1   0.459   0.455  vgame/U4/U/Mcompar_wave_cmp_ge0001_cy<11> (vgame/U4/U/wave_cmp_ge0012)
+     LUT3:I2->O            1   0.704   0.000  vgame/U4/U/wave_mux00001241_G (N360)
+     MUXF5:I1->O           2   0.321   0.451  vgame/U4/U/wave_mux00001241 (vgame/U4/U/N21)
+     LUT4:I3->O            2   0.704   0.451  vgame/U4/U/wave_mux0000150_SW0_SW0 (N323)
+     LUT4_D:I3->O         15   0.704   1.021  vgame/U4/U/wave_mux0000150 (vgame/U4/U/N01)
+     LUT4:I3->O            1   0.704   0.000  vgame/U4/U/count_mux0000<8>1 (vgame/U4/U/count_mux0000<8>)
+     FD:D                      0.308          vgame/U4/U/count_7
+    ----------------------------------------
+    Total                      9.649ns (6.135ns logic, 3.514ns route)
+                                       (63.6% logic, 36.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'vgame/clk1001'
+  Clock period: 9.699ns (frequency: 103.103MHz)
+  Total number of paths / destination ports: 57316 / 328
+-------------------------------------------------------------------------
+Delay:               9.699ns (Levels of Logic = 18)
+  Source:            vgame/Mmult_randNum_mult0022_14 (FF)
+  Destination:       vgame/mouse_7_2 (FF)
+  Source Clock:      vgame/clk1001 rising
+  Destination Clock: vgame/clk1001 rising
+
+  Data Path: vgame/Mmult_randNum_mult0022_14 to vgame/mouse_7_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.591   0.622  vgame/Mmult_randNum_mult0022_14 (vgame/Mmult_randNum_mult0022_14)
+     LUT2:I0->O            1   0.704   0.000  vgame/Mmult_randNum_mult0022_Madd_lut<16> (vgame/Mmult_randNum_mult0022_Madd_lut<16>)
+     MUXCY:S->O            1   0.464   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<16> (vgame/Mmult_randNum_mult0022_Madd_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<17> (vgame/Mmult_randNum_mult0022_Madd_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<18> (vgame/Mmult_randNum_mult0022_Madd_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<19> (vgame/Mmult_randNum_mult0022_Madd_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<20> (vgame/Mmult_randNum_mult0022_Madd_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<21> (vgame/Mmult_randNum_mult0022_Madd_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<22> (vgame/Mmult_randNum_mult0022_Madd_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<23> (vgame/Mmult_randNum_mult0022_Madd_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<24> (vgame/Mmult_randNum_mult0022_Madd_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<25> (vgame/Mmult_randNum_mult0022_Madd_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  vgame/Mmult_randNum_mult0022_Madd_cy<26> (vgame/Mmult_randNum_mult0022_Madd_cy<26>)
+     XORCY:CI->O           1   0.804   0.499  vgame/Mmult_randNum_mult0022_Madd_xor<27> (vgame/Mmult_randNum_mult0022_Madd_27)
+     LUT2:I1->O            1   0.704   0.000  vgame/Mmult_randNum_mult0022_Madd1_lut<27> (vgame/Mmult_randNum_mult0022_Madd1_lut<27>)
+     MUXCY:S->O            1   0.464   0.000  vgame/Mmult_randNum_mult0022_Madd1_cy<27> (vgame/Mmult_randNum_mult0022_Madd1_cy<27>)
+     XORCY:CI->O           9   0.804   0.855  vgame/Mmult_randNum_mult0022_Madd1_xor<28> (vgame/randNum_mult0022<28>)
+     LUT4_L:I2->LO         1   0.704   0.104  vgame/mouse_0_not0002311_SW0 (N301)
+     LUT4:I3->O            3   0.704   0.531  vgame/mouse_1_not000220 (vgame/mouse_1_not0002)
+     FDE:CE                    0.555          vgame/mouse_1_0
+    ----------------------------------------
+    Total                      9.699ns (7.088ns logic, 2.611ns route)
+                                       (73.1% logic, 26.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'vgame/clk1001'
+  Total number of paths / destination ports: 840 / 195
+-------------------------------------------------------------------------
+Offset:              10.063ns (Levels of Logic = 7)
+  Source:            btn<1> (PAD)
+  Destination:       vgame/lifebuff_4 (FF)
+  Destination Clock: vgame/clk1001 rising
+
+  Data Path: btn<1> to vgame/lifebuff_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.218   0.706  btn_1_IBUF (btn_1_IBUF)
+     LUT2_D:I0->O          9   0.704   0.995  vgame/score_not00011111 (vgame/N83)
+     LUT4:I0->O            1   0.704   0.424  vgame/lifebuff_or000023 (vgame/lifebuff_or000023)
+     LUT4:I3->O            1   0.704   0.424  vgame/lifebuff_or000055 (vgame/lifebuff_or000055)
+     LUT4_L:I3->LO         1   0.704   0.104  vgame/lifebuff_or0000105 (vgame/lifebuff_or0000105)
+     LUT4:I3->O            1   0.704   0.424  vgame/lifebuff_or0000144 (vgame/lifebuff_or0000144)
+     LUT4:I3->O            5   0.704   0.633  vgame/lifebuff_or0000201 (vgame/lifebuff_or0000)
+     FDRE:R                    0.911          vgame/lifebuff_0
+    ----------------------------------------
+    Total                     10.063ns (6.353ns logic, 3.710ns route)
+                                       (63.1% logic, 36.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGAshow/ck25MHz1'
+  Total number of paths / destination ports: 2879595 / 5
+-------------------------------------------------------------------------
+Offset:              38.190ns (Levels of Logic = 32)
+  Source:            VGAshow/intHcnt_1 (FF)
+  Destination:       OutGreen (PAD)
+  Source Clock:      VGAshow/ck25MHz1 rising
+
+  Data Path: VGAshow/intHcnt_1 to OutGreen
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             77   0.591   1.451  VGAshow/intHcnt_1 (VGAshow/intHcnt_1)
+     LUT1:I0->O            1   0.704   0.000  VGAshow/Msub__sub0008_cy<1>_rt (VGAshow/Msub__sub0008_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  VGAshow/Msub__sub0008_cy<1> (VGAshow/Msub__sub0008_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  VGAshow/Msub__sub0008_cy<2> (VGAshow/Msub__sub0008_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  VGAshow/Msub__sub0008_cy<3> (VGAshow/Msub__sub0008_cy<3>)
+     XORCY:CI->O          18   0.804   1.243  VGAshow/Msub__sub0008_xor<4> (VGAshow/Msub_j205_addsub0002_lut<4>)
+     LUT1:I0->O            1   0.704   0.000  VGAshow/Msub_j205_addsub0001_cy<4>_rt (VGAshow/Msub_j205_addsub0001_cy<4>_rt)
+     MUXCY:S->O            1   0.464   0.000  VGAshow/Msub_j205_addsub0001_cy<4> (VGAshow/Msub_j205_addsub0001_cy<4>)
+     XORCY:CI->O           1   0.804   0.595  VGAshow/Msub_j205_addsub0001_xor<5> (VGAshow/j205_addsub0001<5>)
+     LUT3:I0->O            1   0.704   0.424  VGAshow/j205_mux0016<0>11126_SW0 (N581)
+     LUT4:I3->O            1   0.704   0.595  VGAshow/j205_mux0016<0>11126 (VGAshow/j205_mux0016<0>11126)
+     LUT4:I0->O            1   0.704   0.499  VGAshow/j205_mux0016<0>111511 (VGAshow/j205_mux0016<0>111511)
+     LUT4:I1->O            3   0.704   0.610  VGAshow/j205_mux0016<0>111146 (VGAshow/N5911)
+     LUT4:I1->O            2   0.704   0.526  VGAshow/j205_mux0016<0>1196 (VGAshow/N527)
+     LUT4:I1->O            4   0.704   0.762  VGAshow/j205_mux0016<0>1 (VGAshow/N471)
+     LUT3:I0->O            7   0.704   0.883  VGAshow/j205_mux0016<0>211 (VGAshow/N4761)
+     LUT3:I0->O            1   0.704   0.595  VGAshow/j205_mux0016<5>1 (VGAshow/j205_mux0016<5>)
+     LUT4:I0->O            1   0.704   0.424  VGAshow/pic_brokenheart0_mux000154_SW0 (N767)
+     LUT4:I3->O            1   0.704   0.424  VGAshow/pic_brokenheart0_mux000154 (VGAshow/pic_brokenheart0_mux000154)
+     LUT4:I3->O            1   0.704   0.595  VGAshow/pic_brokenheart0_mux000163_SW0_SW0 (N855)
+     LUT4:I0->O            1   0.704   0.424  VGAshow/pic_brokenheart0_mux000163_SW0 (N569)
+     LUT4:I3->O            2   0.704   0.622  VGAshow/pic_brokenheart0_mux000163 (VGAshow/pic_brokenheart0_mux0001)
+     LUT2:I0->O            1   0.704   0.000  VGAshow/rgb_1_mux00092297_SW01 (VGAshow/rgb_1_mux00092297_SW0)
+     MUXF5:I1->O           2   0.321   0.622  VGAshow/rgb_1_mux00092297_SW0_f5 (N385)
+     LUT4:I0->O            1   0.704   0.499  VGAshow/rgb_1_mux0009624_SW0_SW0_SW0 (N939)
+     LUT4:I1->O            1   0.704   0.455  VGAshow/rgb_1_mux0009624_SW0_SW0 (N891)
+     LUT4:I2->O            1   0.704   0.595  VGAshow/rgb_1_mux0009624_SW0 (N491)
+     LUT4:I0->O            1   0.704   0.000  VGAshow/rgb_1_mux0009649_SW02 (VGAshow/rgb_1_mux0009649_SW01)
+     MUXF5:I0->O           1   0.321   0.499  VGAshow/rgb_1_mux0009649_SW0_f5 (N935)
+     LUT4:I1->O            1   0.704   0.455  VGAshow/rgb_1_mux0009649 (VGAshow/rgb_1_mux0009649)
+     LUT4:I2->O            2   0.704   0.622  VGAshow/rgb_1_mux0009663 (VGAshow/rgb_1_mux0009)
+     LUT2:I0->O            1   0.704   0.420  VGAshow/outGreen1 (OutGreen_OBUF)
+     OBUF:I->O                 3.272          OutGreen_OBUF (OutGreen)
+    ----------------------------------------
+    Total                     38.190ns (23.351ns logic, 14.839ns route)
+                                       (61.1% logic, 38.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
+  Total number of paths / destination ports: 318 / 13
+-------------------------------------------------------------------------
+Offset:              18.973ns (Levels of Logic = 15)
+  Source:            vgame/onebitmouse_3 (FF)
+  Destination:       OutBlue (PAD)
+  Source Clock:      mclk rising
+
+  Data Path: vgame/onebitmouse_3 to OutBlue
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.591   0.622  vgame/onebitmouse_3 (vgame/onebitmouse_3)
+     LUT4:I2->O            1   0.704   0.595  VGAshow/rgb_0_mux00092124 (VGAshow/rgb_0_mux00092124)
+     LUT4:I0->O            1   0.704   0.000  VGAshow/rgb_0_mux00092163_G (N1004)
+     MUXF5:I1->O           1   0.321   0.455  VGAshow/rgb_0_mux00092163 (VGAshow/rgb_0_mux00092163)
+     LUT4:I2->O            1   0.704   0.000  VGAshow/rgb_0_mux000922461_SW0_G (N1074)
+     MUXF5:I1->O           1   0.321   0.455  VGAshow/rgb_0_mux000922461_SW0 (N441)
+     LUT4:I2->O            1   0.704   0.424  VGAshow/rgb_0_mux000922461 (VGAshow/rgb_0_mux000922461)
+     LUT4:I3->O            1   0.704   0.595  VGAshow/rgb_0_mux00092292 (VGAshow/rgb_0_mux00092292)
+     LUT3:I0->O            1   0.704   0.000  VGAshow/rgb_0_mux00092342_F (N1013)
+     MUXF5:I0->O           1   0.321   0.499  VGAshow/rgb_0_mux00092342 (VGAshow/rgb_0_mux00092342)
+     LUT4:I1->O            1   0.704   0.595  VGAshow/rgb_0_mux00092414_SW0 (N383)
+     LUT4:I0->O            2   0.704   0.622  VGAshow/rgb_0_mux00092414 (VGAshow/N266)
+     LUT4:I0->O            1   0.704   0.499  VGAshow/rgb_0_mux00097 (VGAshow/rgb_0_mux00097)
+     LUT4:I1->O            2   0.704   0.622  VGAshow/rgb_0_mux0009307 (VGAshow/rgb_0_mux0009)
+     LUT2:I0->O            1   0.704   0.420  VGAshow/outBlue1 (OutBlue_OBUF)
+     OBUF:I->O                 3.272          OutBlue_OBUF (OutBlue)
+    ----------------------------------------
+    Total                     18.973ns (12.570ns logic, 6.403ns route)
+                                       (66.3% logic, 33.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'vgame/clk1001'
+  Total number of paths / destination ports: 7604 / 3
+-------------------------------------------------------------------------
+Offset:              21.179ns (Levels of Logic = 16)
+  Source:            vgame/countdown_1 (FF)
+  Destination:       OutBlue (PAD)
+  Source Clock:      vgame/clk1001 rising
+
+  Data Path: vgame/countdown_1 to OutBlue
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             10   0.591   0.961  vgame/countdown_1 (vgame/countdown_1)
+     LUT3:I1->O            1   0.704   0.000  VGAshow/Mmult_add0000_mult0000_Madd1_lut<1> (VGAshow/Mmult_add0000_mult0000_Madd1_lut<1>)
+     MUXCY:S->O            1   0.464   0.000  VGAshow/Mmult_add0000_mult0000_Madd1_cy<1> (VGAshow/Mmult_add0000_mult0000_Madd1_cy<1>)
+     XORCY:CI->O           7   0.804   0.883  VGAshow/Mmult_add0000_mult0000_Madd1_xor<2> (VGAshow/Madd__add0000_lut<2>)
+     LUT3:I0->O            5   0.704   0.668  VGAshow/Madd__add0000_xor<4>111 (VGAshow/N593)
+     LUT3:I2->O            1   0.704   0.424  VGAshow/Madd__add0000_xor<8>1_SW1 (N689)
+     LUT4:I3->O            1   0.704   0.595  VGAshow/Madd__add0000_xor<8>1 (VGAshow/_add0000<8>)
+     LUT2:I0->O            1   0.704   0.000  VGAshow/Mcompar_rgb_0_cmp_le0000_lut<8> (VGAshow/Mcompar_rgb_0_cmp_le0000_lut<8>)
+     MUXCY:S->O            1   0.464   0.000  VGAshow/Mcompar_rgb_0_cmp_le0000_cy<8> (VGAshow/Mcompar_rgb_0_cmp_le0000_cy<8>)
+     MUXCY:CI->O           1   0.459   0.455  VGAshow/Mcompar_rgb_0_cmp_le0000_cy<9> (VGAshow/rgb_0_cmp_le0000)
+     LUT4:I2->O            4   0.704   0.666  VGAshow/rgb_0_and000029 (VGAshow/rgb_0_and0000)
+     LUT4:I1->O            3   0.704   0.566  VGAshow/rgb_0_mux0009261 (VGAshow/N492)
+     LUT4:I2->O            2   0.704   0.622  VGAshow/rgb_0_mux00092414 (VGAshow/N266)
+     LUT4:I0->O            1   0.704   0.499  VGAshow/rgb_0_mux00097 (VGAshow/rgb_0_mux00097)
+     LUT4:I1->O            2   0.704   0.622  VGAshow/rgb_0_mux0009307 (VGAshow/rgb_0_mux0009)
+     LUT2:I0->O            1   0.704   0.420  VGAshow/outBlue1 (OutBlue_OBUF)
+     OBUF:I->O                 3.272          OutBlue_OBUF (OutBlue)
+    ----------------------------------------
+    Total                     21.179ns (13.798ns logic, 7.381ns route)
+                                       (65.1% logic, 34.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGAshow/rgb_0_cmp_lt0000'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              12.474ns (Levels of Logic = 9)
+  Source:            VGAshow/rgb_1 (LATCH)
+  Destination:       OutGreen (PAD)
+  Source Clock:      VGAshow/rgb_0_cmp_lt0000 falling
+
+  Data Path: VGAshow/rgb_1 to OutGreen
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.676   0.499  VGAshow/rgb_1 (VGAshow/rgb_1)
+     LUT4:I1->O            1   0.704   0.455  VGAshow/rgb_1_mux0009299 (VGAshow/rgb_1_mux0009299)
+     LUT4:I2->O            1   0.704   0.000  VGAshow/rgb_1_mux0009343_F (N1015)
+     MUXF5:I0->O           1   0.321   0.499  VGAshow/rgb_1_mux0009343 (VGAshow/rgb_1_mux0009343)
+     LUT4_L:I1->LO         1   0.704   0.179  VGAshow/rgb_1_mux0009387 (VGAshow/rgb_1_mux0009387)
+     LUT4:I1->O            1   0.704   0.499  VGAshow/rgb_1_mux0009433 (VGAshow/rgb_1_mux0009433)
+     LUT4_L:I1->LO         1   0.704   0.104  VGAshow/rgb_1_mux0009483 (VGAshow/rgb_1_mux0009483)
+     LUT4:I3->O            2   0.704   0.622  VGAshow/rgb_1_mux0009663 (VGAshow/rgb_1_mux0009)
+     LUT2:I0->O            1   0.704   0.420  VGAshow/outGreen1 (OutGreen_OBUF)
+     OBUF:I->O                 3.272          OutGreen_OBUF (OutGreen)
+    ----------------------------------------
+    Total                     12.474ns (9.197ns logic, 3.277ns route)
+                                       (73.7% logic, 26.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 139.00 secs
+Total CPU time to Xst completion: 139.18 secs
+ 
+--> 
+
+Total memory usage is 276172 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  200 (   0 filtered)
+Number of infos    :   28 (   0 filtered)
+

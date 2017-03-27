@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Administrator\Desktop\HitTheMouse_final\HitTheMouse\HitTheMouse.ncd
+OUTFILE=C:\Users\Administrator\Desktop\HitTheMouse_final\HitTheMouse\HitTheMouse.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Users\Administrator\Desktop\HitTheMouse_final\HitTheMouse
+LICENSE=WebPack
+USER_INFO=__123456789_123456_123456789

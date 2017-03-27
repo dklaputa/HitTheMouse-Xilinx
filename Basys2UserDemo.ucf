@@ -1,0 +1,69 @@
+
+
+NET "mclk" CLOCK_DEDICATED_ROUTE = FALSE;
+//NET "an[3]" LOC = F12;
+//NET "an[2]" LOC = J12;
+//NET "an[1]" LOC = M13;
+//NET "an[0]" LOC = K14;
+NET "btn[7]" LOC = F7;
+NET "btn[6]" LOC = E7;
+NET "btn[5]" LOC = C5;
+NET "btn[4]" LOC = D5;
+NET "btn[3]" LOC = B6;
+NET "btn[2]" LOC = A6;
+NET "btn[1]" LOC = A4;
+NET "btn[0]" LOC = B4;
+NET "led[0]" LOC = F12;
+NET "led[1]" LOC = E12;
+NET "led[2]" LOC = E11;
+NET "led[3]" LOC = F11;
+NET "led[4]" LOC = C11;
+NET "led[5]" LOC = D11;
+NET "led[6]" LOC = E9;
+NET "led[7]" LOC = F9;
+
+# PlanAhead Generated physical constraints 
+
+NET "OutBlue" LOC = G15;
+//NET "OutBlue[1]" LOC = H13;
+NET "OutGreen" LOC = H15;
+//NET "OutGreen[1]" LOC = G13;
+//NET "OutGreen[0]" LOC = F14;
+NET "OutRed" LOC = H14;
+//NET "OutRed[1]" LOC = D13;
+//NET "OutRed[0]" LOC = C14;
+
+//NET "seg[7]" LOC = N13;
+//NET "seg[6]" LOC = M12;
+//NET "seg[5]" LOC = L13;
+//NET "seg[4]" LOC = P12;
+//NET "seg[3]" LOC = N11;
+//NET "seg[2]" LOC = N14;
+//NET "seg[1]" LOC = H12;
+//NET "seg[0]" LOC = L14;
+
+
+NET "fpgabtn[0]" LOC =H13;
+NET "fpgabtn[1]" LOC =K17;
+NET "fpgabtn[2]" LOC =D18;
+//NET "fpgabtn[3]" LOC =A7;
+NET "HS" LOC = F15;
+NET "mclk" LOC = C9;
+NET "VS" LOC = F14;
+//NET "uclk" LOC = M6;
+
+# PlanAhead Generated IO constraints 
+
+NET "VS" SLEW = FAST;
+NET "HS" SLEW = FAST;
+NET "OutBlue" SLEW = FAST;
+//NET "OutBlue[1]" SLEW = FAST;
+NET "OutGreen" SLEW = FAST;
+//NET "OutGreen[1]" SLEW = FAST;
+//NET "OutGreen[0]" SLEW = FAST;
+NET "OutRed" SLEW = FAST;
+//NET "OutRed[1]" SLEW = FAST;
+//NET "OutRed[0]" SLEW = FAST;
+
+NET "soundWave" LOC = D7;
+NET "BGM" LOC = C7;
